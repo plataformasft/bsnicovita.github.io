@@ -11,168 +11,2337 @@
       
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">Registro de Patología en fresco <img src="vitapro_2.png" alt="Logo" style="float: right; width: 180px; height: auto;"></h1>
+          <h1 class="title">Survey Patología en Fresco <img src="vitapro_2.png" alt="Logo" style="float: right; width: 180px; height: auto;"></h1>
         </div>
       </div>
     </section>
     <form id="form" class="container m-4 pl-4" method="POST">
-      <div class="field">
-        <label class="label">Client Name</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Your Client Name"
-            name="Client Name"
-          />
+
+           <!--Tipo fecha con formato dd/mm/yyyy-->
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
+           
+           <style>
+            .datepicker-dropdown {
+              background-color: #fff;
+            }
+            .datepicker td, .datepicker th {
+              font-size: 12px;
+            }
+          </style>
+           <div class="field">
+             <label class="label">Fecha</label>
+             <div class="control">
+               <input
+                 class="input"
+                 type="text"
+                 placeholder="yyyy-mm-dd"
+                 name="fecha"
+                 id="date"
+                 style="max-width: 210px;"
+               />
+             </div>
+           </div>
+           
+           <script>
+             $(document).ready(function(){
+               $('#date').datepicker({
+                 format: "yyyy-mm-dd",
+                 language: "es",
+                 autoclose: true,
+                 todayHighlight: true
+               });
+             });
+           </script>
+           
+         
+
+      <!--Fila 1-->
+      <!--Tipo desplegable-->
+      <div class="columns">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Responsable</label>
+            <div class="control">
+              <div class="select">
+                <select name="responsable" required>
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="test">Test</option>
+                  <option value="APB-Bio">APB-Bio</option>
+                  <option value="AT Vitapro">AT Vitapro</option>
+                  <option value="FT Vitapro">FT Vitapro</option>
+                  <option value="mandasacorp">mandasacorp</option>
+                  <option value="culcamar">culcamar</option>
+                  <option value="fonseca">fonseca</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Cliente</label>
+            <div class="control">
+              <div class="select">
+                <select name="cliente" required>
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="ipsp">IPSP</option>
+                  <option value="vinicio aguirre">Vinicio Aguirre</option>
+                  <option value="marinasol">Marinasol</option>
+                  <option value="mandasacorp">mandasacorp</option>
+                  <option value="culcamar">culcamar</option>
+                  <option value="fonseca">fonseca</option>
+                  <option value="langostinera tumbes">langostinera tumbes</option>
+                  <option value="icasur">icasur</option>
+                  <option value="acuarios marinos">Acuarios Marinos</option>
+                  <option value="gms">GMS</option>
+                  <option value="promarisco">Promarisco</option>
+                  <option value="grlitoral">grlitoral</option>
+                  <option value="omarsa">Omarsa</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Camaronera</label>
+            <div class="control">
+              <div class="select">
+                <select name="camaronera"style="max-width: 210px;"required>
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="afrika">Afrika</option>
+                  <option value="bajen">Bajen</option>
+                  <option value="chanduy">Chanduy</option>
+                  <option value="california">California</option>
+                  <option value="cachugran">Cachugran</option>
+                  <option value="puna">Puna</option>
+                  <option value="chongon">Chongon</option>
+                  <option value="puerto inca">Puerto Inca</option>
+                  <option value="marfrisco">Marfrisco</option>
+                  <option value="v.aguirre	israel">V.Aguirre	Israel</option>
+                  <option value="acuarios marinos">Acuarios Marinos</option>
+                  <option value="culcamar">Culcamar</option>
+                  <option value="gms">GMS</option>
+                  <option value="grlitoral">GrLitoral</option>
+                  <option value="grrivera	Rivermar">GrRivera	Rivermar</option>
+                  <option value="icasur">Icasur</option>
+                  
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Sector</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Sector"
+                name="sector"
+                style="max-width: 210px;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Piscina</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Piscina"
+                name="piscina"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       <!--Fila 1-->
+
+    <!--Fila 2-->
+    <div class="columns">
+    
+      <div class="column">
+        <div class="field">
+            <label class="label">Temperatura</label>
+            <div class="control">
+                <input
+                  class="input"
+                  type="number"
+                  placeholder="Temperatura"
+                  name="temperatura"
+                  min="15"
+                  max="38"
+                />
+            </div>
+        </div>
+      </div>
+         
+          
+        
+
+      <div class="column">
+          <div class="field">
+            <label class="label">Oxígeno disuelto (mg/L)</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Oxígeno"
+                name="oxigeno"
+                min="5"
+                max="15"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Alcalidad mg/L</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Alcalinidad"
+                name="alcalinidad "
+                min="30"
+                max="350"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Salinidad ppt</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Salinidad"
+                name="salinidad"
+                min="0"
+                max="50"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Fila 3-->
+
+    <!--Fila 4-->
+    <div class="columns">
+    
+      <div class="column">
+        <div class="field">
+            <label class="label">Días de cultivo</label>
+            <div class="control">
+                <input
+                  class="input"
+                  type="number"
+                  placeholder="Días de cultivo"
+                  name="dias_cultivo"
+                  min="1"
+                  max="150"
+                />
+            </div>
+        </div>
+      </div>
+         
+      <div class="column">
+        <div class="field">
+          <label class="label">¿Extra Pellet?</label>
+          <div class="control">
+            <div class="select">
+              <select name="extra_pellet">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
 
+        
+
+      <div class="column">
+          <div class="field">
+            <label class="label">Pres. alimento balanceado</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Presentación de alimento balanceado"
+                name="alimento_presentacion"
+              />
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="column">
+          <div class="field">
+            <label class="label">Marca Aliment. Balanc.</label>
+            <div class="control">
+              <div class="select">
+                <select name="alimento_marca" required>
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="alimentsa">Alimentsa</option>
+                  <option value="nicovita">Nicovita</option>
+                  <option value="skretting">Skretting</option>
+                  <option value="haid">Haid</option>
+                  <option value="cargil">Cargil</option>
+                  <option value="biomar">Biomar</option>
+                  <option value="Otros">Otros</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+      
+    <!--Fila 3-->
+
+      <!--Tipo numérico-->
       <div class="field">
-        <label class="label">Edad</label>
+        <label class="label">Peso (gr)</label>
         <div class="control">
           <input
             class="input"
             type="number"
-            placeholder="Edad del cliente"
-            name="Edad"
-            min="15"
+            placeholder="Peso (gr)"
+            name="peso"
+            min="0.1"
             max="60"
+            style="max-width: 220px;"
           />
         </div>
       </div>
 
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-weight-bold has-text-blue" style="border-top: 1px solid #000; padding-top: 8px;">Hepatopáncreas</p>
+      <p class="subtitle is-6 has-text-black">- Grado de severidad</p>
+
+
+      <!--Fila 5-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS01</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs01">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS02</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs02">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS03</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs03">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS04</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs04">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS05</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs05">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Fila 6-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS06</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpgs06">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS07</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs07">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS08</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs08">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS09</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs09">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPGS10</label>
+            <div class="control">
+              <div class="select is-small">                
+                <select name="hpgs10">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-black" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+      <p class="subtitle is-6 has-text-black">- Porcentaje de lípidos</p>
+
+           <!--Fila 5-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP01</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip01"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP02</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip02"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP03</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip03"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP04</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip04"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP05</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip05"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Fila 6-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP06</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip06"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP07</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip07"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP08</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip08"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP09</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip09"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPLIP10</label>
+            <div class="control">
+              <input
+                class="input"
+                type="number"
+                placeholder="Sector"
+                name="hplip010"
+                min="0"
+                max="100"
+                style="max-width: 160px;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-black" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+      <p class="subtitle is-6 has-text-black">- Deformación</p>
+
+           <!--Fila 5-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPDEF01</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpdef01">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPDEF02</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpdef02">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPDEF03</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpdef03">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPDEF04</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpdef04">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPDEF05</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpdef05">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+      <!--Fila 6-->
+        <!--Tipo desplegable-->
+        <div class="columns is-gapless">
+
+          <div class="column">
+            <div class="field">
+              <label class="label">HPDEF06</label>
+              <div class="control">
+                <div class="select is-small">
+                  <select name="hpdef06">
+                    <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value=""></option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <label class="label">HPDEF07</label>
+              <div class="control">
+                <div class="select is-small">
+                  <select name="hpdef07">
+                    <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value=""></option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="field">
+              <label class="label">HPDEF08</label>
+              <div class="control">
+                <div class="select is-small">
+                  <select name="hpdef08">
+                    <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value=""></option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <label class="label">HPDEF09</label>
+              <div class="control">
+                <div class="select is-small">
+                  <select name="hpdef09">
+                    <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value=""></option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <label class="label">HPDEF10</label>
+              <div class="control">
+                <div class="select is-small">
+                  <select name="hpdef10">
+                    <option value="" disabled selected hidden>Selecciona una opción</option>
+                    <option value=""></option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-black" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+      <p class="subtitle is-6 has-text-black">- Melanización</p>
+
+           <!--Fila 5-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL01</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel01">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL02</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel02">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL03</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel03">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL04</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel04">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL05</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel05">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Fila 6-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL06</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel06">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL07</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel07">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL08</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel08">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL09</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel09">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPMEL10</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpmel10">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-black" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+      <p class="subtitle is-6 has-text-black">- Necrosis</p>
+
+           <!--Fila 5-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC01</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec01">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC02</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec02">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC03</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec03">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC04</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec04">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC05</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec05">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Fila 6-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC06</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec06">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC07</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec07">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC08</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec08">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC09</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec09">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">HPNEC10</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="hpnec10">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value=""></option>
+                  <option value="si">Si</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-weight-bold has-text-blue" style="border-top: 1px solid #000; padding-top: 8px;">Bránquias</p>
+      <p class="subtitle is-6 has-text-black">- Grado de severidad</p>
+
+           <!--Fila 5-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS01</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs01">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS02</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs02">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS03</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs03">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS04</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs04">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS05</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs05">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Fila 6-->
+      <!--Tipo desplegable-->
+      <div class="columns is-gapless">
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS06</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs06">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS07</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs07">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS08</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs08">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS09</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs09">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="label">BRGS10</label>
+            <div class="control">
+              <div class="select is-small">
+                <select name="brgs10">
+                  <option value="" disabled selected hidden>Selecciona una opción</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-black" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+      <p class="subtitle is-6 has-text-black">- Melanización</p>
+
+      <!--Fila 5-->
+ <!--Tipo desplegable-->
+ <div class="columns is-gapless">
+
+  <div class="column">
+     <div class="field">
+       <label class="label">BRMEL01</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel01">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL02</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel02">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL03</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel03">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL04</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel04">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL05</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel05">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+<!--Fila 6-->
+ <!--Tipo desplegable-->
+ <div class="columns is-gapless">
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL06</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel06">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL07</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel07">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL08</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel08">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL09</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel09">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRMEL10</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brmel10">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <hr style="margin-top: 20px; margin-bottom: 20px;">
+ <p class="subtitle is-4 has-text-black" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+ <p class="subtitle is-6 has-text-black">- Necrosis</p>
+
+      <!--Fila 5-->
+ <!--Tipo desplegable-->
+ <div class="columns is-gapless">
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC01</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec01">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC02</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec02">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC03</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec03">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC04</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec04">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC05</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec05">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+<!--Fila 6-->
+ <!--Tipo desplegable-->
+ <div class="columns is-gapless">
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC06</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec06">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC07</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec07">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC08</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec08">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC09</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec09">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="column">
+     <div class="field">
+       <label class="label">BRNEC10</label>
+       <div class="control">
+         <div class="select is-small">
+           <select name="brnec10">
+             <option value="" disabled selected hidden>Selecciona una opción</option>
+             <option value=""></option>
+             <option value="si">Si</option>
+           </select>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <hr style="margin-top: 20px; margin-bottom: 20px;">
+ <p class="subtitle is-4 has-text-weight-bold has-text-blue" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+ <p class="subtitle is-6 has-text-black">- Bránquias sucias</p>
+
+
+  <div class="columns is-gapless">
+
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC01</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc01">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC02</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc02">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC03</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc03">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC04</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc04">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC05</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc05">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--Fila 6-->
+    <!--Tipo desplegable-->
+    <div class="columns is-gapless">
+  
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC06</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc06">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC07</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc07">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC08</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc08">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC09</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc09">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="column">
+        <div class="field">
+          <label class="label">BRSUSC10</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="brsusc10">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value=""></option>
+                <option value="si">Si</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <hr style="margin-top: 20px; margin-bottom: 20px;">
+  <p class="subtitle is-4 has-text-weight-bold has-text-blue" style="border-top: 1px solid #000; padding-top: 8px;">Intestino</p>
+  <p class="subtitle is-6 has-text-black">- Grado de severidad</p>
+
+  <div class="columns is-gapless">
+
+    <div class="column">
       <div class="field">
-        <label class="label">Email</label>
+        <label class="label">INTGS01</label>
         <div class="control">
-          <div class="select">
-            <select name="Email">
-              <option value="example1@example.com">example1@example.com</option>
-              <option value="example2@example.com">example2@example.com</option>
-              <option value="example3@example.com">example3@example.com</option>
+          <div class="select is-small">
+            <select name="intgs01">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
             </select>
           </div>
         </div>
       </div>
-      <!-- <div class="field">
-        <label class="label">Last Name</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Your Last Name"
-            name="Last Name"
-          />
-        </div>
-      </div> -->
+    </div>
 
-      <!-- <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input
-            class="input"
-            type="email"
-            placeholder="Your Email"
-            name="Email"
-          />
-        </div>
-      </div>-->
-
-
+    <div class="column">
       <div class="field">
-        <label class="label">Password</label>
+        <label class="label">INTGS02</label>
         <div class="control">
-          <input
-            class="input"
-            type="password"
-            placeholder="Your Password"
-            name="Password"
-          />
+          <div class="select is-small">
+            <select name="intgs02">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTGS03</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intgs03">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTGS04</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intgs04">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTGS05</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intgs05">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!--Fila 6-->
+    <!--Tipo desplegable-->
+    <div class="columns is-gapless">
+
+      <div class="column">
+        <div class="field">
+          <label class="label">INTGS06</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="intgs06">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!--<div class="field">
-        <label class="label">Date of Birth</label>
-        <div class="control">
-          <input
-            class="input"
-            type="date"
-            placeholder="Your Date of Birth"
-            name="DOB"
-          />
-        </div>
-      </div>-->
-
-      <div class="field">
-        <label class="label">Date of Birth</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="DD/MM/YYYY"
-            name="DOB"
-            id="dateOfBirth"
-          />
-        </div>
-      </div>
-      
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const dateOfBirthInput = document.getElementById("dateOfBirth");
-          dateOfBirthInput.addEventListener("input", function() {
-            const inputValue = this.value;
-            if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(inputValue)) {
-              this.setCustomValidity("Please use the format DD/MM/YYYY");
-            } else {
-              this.setCustomValidity("");
-            }
-          });
-        });
-      </script>
-      
-      
-
-      <div class="field">
-        <label class="label">Gender</label>
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="Gender" value="male" /> Male
-          </label>
-          <label class="radio">
-            <input type="radio" name="Gender" value="female" /> Female
-          </label>
+      <div class="column">
+        <div class="field">
+          <label class="label">INTGS07</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="intgs07">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
 
+      <div class="column">
+        <div class="field">
+          <label class="label">INTGS08</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="intgs08">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <label class="label">INTGS09</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="intgs09">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <label class="label">INTGS10</label>
+          <div class="control">
+            <div class="select is-small">
+              <select name="intgs10">
+                <option value="" disabled selected hidden>Selecciona una opción</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<hr style="margin-top: 20px; margin-bottom: 20px;">
+<p class="subtitle is-4 has-text-weight-bold has-text-blue" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+<p class="subtitle is-6 has-text-black">- Canibalismo</p>
+
+<div class="columns is-gapless">
+
+    <div class="column">
       <div class="field">
-        <label class="label">Agree to Terms</label>
+        <label class="label">INTCAN01</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan01">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN02</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan02">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN03</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan03">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN04</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan04">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN05</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan05">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Fila 6-->
+<!--Tipo desplegable-->
+<div class="columns is-gapless">
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN06</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan06">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN07</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan07">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN08</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan08">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN09</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan09">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="field">
+        <label class="label">INTCAN10</label>
+        <div class="control">
+          <div class="select is-small">
+            <select name="intcan10">
+              <option value="" disabled selected hidden>Selecciona una opción</option>
+              <option value=""></option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+      <hr style="margin-top: 20px; margin-bottom: 20px;">
+      <p class="subtitle is-4 has-text-weight-bold has-text-blue" style="border-top: 1px solid #000; padding-top: 8px;"></p>
+      
+      <div class="field">
+        <label class="label">Fiabilidad</label>
         <div class="control">
           <label class="checkbox">
-            <input type="checkbox" name="Agree To Terms" value="yes" /> I agree
-            to the terms and conditions
+            <input type="checkbox" name="Agree To Terms" value="yes" /> Confirmo la fiabilidad de la información proporcionada 
           </label>
         </div>
       </div>
 
       <div class="field">
-        <label class="label">Additional Information</label>
+        <label class="label">Información adicional</label>
         <div class="control">
           <textarea
             class="textarea"
-            placeholder="Any additional information"
-            name="Notes"
+            placeholder="Comentario"
+            name="comentario"
           ></textarea>
         </div>
       </div>
+      
+      <!--adjuntando pdf-->
+
+     
 
       <div class="field is-grouped">
         <div class="control">
           <button class="button is-primary" type="submit" id="submit-button">
-            Sign Up
+            Guardar
           </button>
         </div>
         <div class="control">
-          <button class="button is-danger">Cancel</button>
+          <button class="button is-danger">Cancelar</button>
         </div>
       </div>
     </form>
@@ -208,7 +2377,10 @@
 
         // Send a POST request to your Google Apps Script
         fetch(
-          "https://script.google.com/macros/s/AKfycbziICwhCQMLOR_68pU0YeLb75vLWan64poPfVuJI0WTrYw6gUn2LCAQZecLwlu-HzqP/exec",
+             "https://script.google.com/macros/s/AKfycbziICwhCQMLOR_68pU0YeLb75vLWan64poPfVuJI0WTrYw6gUn2LCAQZecLwlu-HzqP/exec",
+           //"https://script.google.com/macros/s/AKfycbziICwhCQMLOR_68pU0YeLb75vLWan64poPfVuJI0WTrYw6gUn2LCAQZecLwlu-HzqP/exec",
+          //https://script.google.com/macros/s/AKfycbziICwhCQMLOR_68pU0YeLb75vLWan64poPfVuJI0WTrYw6gUn2LCAQZecLwlu-HzqP/exec
+          //https://script.google.com/macros/s/AKfycbziICwhCQMLOR_68pU0YeLb75vLWan64poPfVuJI0WTrYw6gUn2LCAQZecLwlu-HzqP/exec
           {
             redirect: "follow",
             method: "POST",
@@ -251,4 +2423,5 @@
       });
     </script>
   </body>
+</html>
 </html>
