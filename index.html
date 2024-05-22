@@ -139,9 +139,7 @@
         </div>
       
 
-
-
-        <div class="column">
+        <!--<div class="column">
           <div class="field">
             <label class="label">Sector</label>
             <div class="control">
@@ -154,9 +152,26 @@
               />
             </div>
           </div>
-        </div>
+        </div>-->
 
         <div class="column">
+          <div class="field">
+            <label class="label">Sector</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Sector"
+                name="sector_pato"
+                style="max-width: 210px;"
+                inputmode="numeric"
+                pattern="[a-zA-Z0-9]*"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="column">
           <div class="field">
             <label class="label">Piscina</label>
             <div class="control">
@@ -167,6 +182,22 @@
                 name="piscina_pato"
               />
             </div>
+          </div>
+        </div>
+      </div>-->
+
+      <div class="column">
+        <div class="field">
+          <label class="label">Piscina</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Piscina"
+              name="piscina_pato"
+              inputmode="numeric"
+              pattern="[a-zA-Z0-9]*"
+            />
           </div>
         </div>
       </div>
@@ -325,7 +356,7 @@
     <!--Fila 3-->
 
       <!--Tipo numérico-->
-      <div class="field">
+      <!--<div class="field">
         <label class="label">Peso (gr)</label>
         <div class="control">
           <input
@@ -339,7 +370,26 @@
             style="max-width: 220px;"
           />
         </div>
+      </div>-->
+
+      <div class="field">
+        <label class="label">Peso (gr)</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Peso (gr)"
+            name="peso"
+            pattern="^\d{1,2}(\.\d{1,2})?$"
+            title="Por favor, ingresa un valor numérico entre 0.1 y 60 con hasta dos decimales."
+            style="max-width: 220px;"
+            required
+            min="0.1"
+            max="60"
+          />
+        </div>
       </div>
+
 
       <hr style="margin-top: 20px; margin-bottom: 20px;">
       <p class="subtitle is-4 has-text-weight-bold has-text-blue" style="border-top: 1px solid #000; padding-top: 8px;">Hepatopáncreas</p>
